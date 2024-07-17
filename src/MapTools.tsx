@@ -4,7 +4,7 @@ import MarkerClusterGroup from 'react-leaflet-cluster'
 import L, { DivIcon, Icon, LatLngExpression, PathOptions } from 'leaflet'
 import { Marker, TileLayer, LayersControl, Tooltip, useMap, Popup, GeoJSON } from 'react-leaflet'
 
-// Lib Styles *
+// Lib Styles ***
 import 'leaflet-easybutton/src/easy-button.js'
 import 'leaflet-easybutton/src/easy-button.css'
 import 'font-awesome/css/font-awesome.min.css'
