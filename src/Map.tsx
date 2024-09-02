@@ -7,7 +7,7 @@ import 'leaflet/dist/leaflet.css'
 
 // Include
 import './Map.scss'
-import { MyLayersControl, MyLocation, MyPinList, MyGeoJsonProvinces } from './MapTools'
+import { MyLayersControl, MyLocation, MyPinList, MyGeoJsonProvinces, MyArea } from './MapTools'
 
 const Map: React.FC = () => {
   return (
@@ -21,6 +21,7 @@ const Map: React.FC = () => {
           <MyLocation />
           <MyPinList />
           <MyGeoJsonProvinces />
+          <MyArea />
         </MapContainer>
       </section>
     </div>

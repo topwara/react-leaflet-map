@@ -1,0 +1,21 @@
+.button-box {
+  z-index: 400;
+  top: 93%;
+  right: 18%;
+  width: 80%;
+  height: auto;
+  padding: 10px;
+  position: absolute;
+  display: inline-block;
+}
+
+.button-box button {
+  border-radius: 5px;
+  margin: 0px 5px 0px 0px;
+  border: none;
+  color: white;
+  padding: 7px 7px;
+  font-size: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}

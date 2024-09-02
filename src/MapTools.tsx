@@ -5,6 +5,7 @@ import L, { DivIcon, Icon, LatLngExpression, PathOptions } from 'leaflet'
 import { Marker, TileLayer, LayersControl, Tooltip, useMap, Popup, GeoJSON } from 'react-leaflet'
 
 // Lib Styles ***
+import './MapTools.scss'
 import 'leaflet-easybutton/src/easy-button.js'
 import 'leaflet-easybutton/src/easy-button.css'
 import 'font-awesome/css/font-awesome.min.css'
@@ -52,6 +53,10 @@ export const MyLayersControl = (): JSX.Element => {
       name: 'Humanitarian',
       url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
     },
+    {
+      name: 'None',
+      url: '',
+    },
   ]
 
   return (
@@ -93,9 +98,16 @@ export const MyLocation = (): JSX.Element | null => {
 }
 
 export const MyPinList = (): JSX.Element[] | any => {
+  const map = useMap()
+  const [click, setClick] = useState<Boolean>(false)
+
+  useEffect(() => {
+    L.easyButton('fa fa-map-marker', () => setClick((current) => !current)).addTo(map)
+  }, [map])
+
   const dataToUse = AirportJson.filter((e) => e.lat && e.lng) as unknown as TLocationPins[]
 
-  return (
+  return click ? (
     <MarkerClusterGroup chunkedLoading>
       {dataToUse.map((e, idx) => {
         const icon = new DivIcon({
@@ -122,12 +134,12 @@ export const MyPinList = (): JSX.Element[] | any => {
         )
       })}
     </MarkerClusterGroup>
-  )
+  ) : null
 }
 
 export const MyGeoJsonProvinces = (): JSX.Element | any => {
   const map = useMap()
-  const [click, setClick] = useState<Boolean>(false)
+  const [click, setClick] = useState<Boolean>(true)
 
   useEffect(() => {
     L.easyButton('fa-map', () => setClick((current) => !current)).addTo(map)
@@ -161,4 +173,66 @@ export const MyGeoJsonProvinces = (): JSX.Element | any => {
   }
 
   return click ? <GeoJSON data={ProvinceJson as any} style={geoStyle} onEachFeature={handleEachFeature} /> : null
+}
+
+export const MyArea = (): JSX.Element | null => {
+  const regions = [
+    {
+      name: 'เริ่มต้น',
+      lat: 13.9812483,
+      lng: 100.6848356,
+    },
+    {
+      name: 'ภาคเหนือ',
+      lat: 18.687649,
+      lng: 99.64909,
+    },
+    {
+      name: 'ภาคตะวันออกเฉียงเหนือ',
+      lat: 16.329128,
+      lng: 103.268278,
+    },
+    {
+      name: 'ภาคกลาง',
+      lat: 15.704428,
+      lng: 100.43386,
+    },
+    {
+      name: 'ภาคตะวันออก',
+      lat: 13.49237,
+      lng: 101.625931,
+    },
+    {
+      name: 'ภาคตะวันตก',
+      lat: 13.968377,
+      lng: 99.392089,
+    },
+    {
+      name: 'ภาคใต้',
+      lat: 8.416663,
+      lng: 99.704774,
+    },
+  ]
+
+  type TLocate = { lat: number; lng: number; zoom: number; name: string }
+
+  const map = useMap()
+  const [position, setPosition] = useState<TLocate>({ ...regions[0], zoom: 7 })
+
+  useEffect(() => {
+    map.flyTo({ lat: position['lat'], lng: position.lng }, position.zoom)
+  })
+
+  return (
+    <div className="button-box">
+      {regions.map((e) => (
+        <button
+          onClick={() => setPosition({ ...e, zoom: 8 })}
+          style={{ backgroundColor: e.name === position?.name ? 'orange' : 'grey' }}
+        >
+          {e.name}
+        </button>
+      ))}
+    </div>
+  )
 }
