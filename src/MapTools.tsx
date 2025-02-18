@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react'
 import MarkerClusterGroup from 'react-leaflet-cluster'
 import L, { DivIcon, Icon, LatLngExpression, PathOptions } from 'leaflet'
-import { Marker, TileLayer, LayersControl, Tooltip, useMap, Popup, GeoJSON } from 'react-leaflet'
+import { Marker, TileLayer, LayersControl, Tooltip, useMap, Popup, GeoJSON, WMSTileLayer } from 'react-leaflet'
 
 // Lib Styles ***
 import './MapTools.scss'
@@ -24,6 +24,8 @@ type TLocationPins = {
   nameEnglish: string
   nameThai: string
 }
+
+// ====================== Originals ======================
 
 export const MyLayersControl = (): JSX.Element => {
   const osmKey = '6e5478c8a4f54c779f85573c0e399391'
@@ -234,5 +236,64 @@ export const MyArea = (): JSX.Element | null => {
         </button>
       ))}
     </div>
+  )
+}
+
+// ====================== GeoServer ======================
+
+export const MyLayersControlGeo = (): JSX.Element => {
+  const osmKey = '6e5478c8a4f54c779f85573c0e399391'
+
+  const mapLayers = [
+    {
+      name: 'Google',
+      url: 'https://www.google.cn/maps/vt?lyrs=m@189&gl=cn&x={x}&y={y}&z={z}',
+    },
+    {
+      name: 'Open Street Map',
+      url: 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+    },
+    {
+      name: 'CyclOSM',
+      url: 'https://{s}.tile-cyclosm.openstreetmap.fr/cyclosm/{z}/{x}/{y}.png',
+    },
+    {
+      name: 'CyclMap',
+      url: `https://{s}.tile.thunderforest.com/cycle/{z}/{x}/{y}.png?apikey=${osmKey}`,
+    },
+    {
+      name: 'TransportMap',
+      url: `https://{s}.tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=${osmKey}`,
+    },
+    {
+      name: 'Humanitarian',
+      url: 'https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png',
+    },
+    {
+      name: 'None',
+      url: '',
+    },
+  ]
+
+  return (
+    <LayersControl>
+      {mapLayers.map((ele, idx) => (
+        <LayersControl.BaseLayer key={idx} checked={idx === 0 ? true : false} name={ele.name}>
+          <TileLayer url={ele.url} />
+        </LayersControl.BaseLayer>
+      ))}
+
+      <LayersControl.Overlay name="Bangkok WMS Layer" checked>
+        <WMSTileLayer
+          url="http://localhost:8080/geoserver/postgis/wms"
+          layers="postgis:tha_admbnda_adm2_rtsd_20220121"
+          format="image/png"
+          version="1.1.0"
+          transparent={true}
+          opacity={0.7}
+          crs={L.CRS.EPSG4326}
+        />
+      </LayersControl.Overlay>
+    </LayersControl>
   )
 }
