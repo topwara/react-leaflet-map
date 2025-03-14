@@ -19,3 +19,69 @@
   cursor: pointer;
   font-weight: bold;
 }
+
+path.leaflet-interactive:focus {
+  outline: none;
+}
+
+.section-button-region {
+  position: absolute;
+  z-index: 1000; /* ตั้งค่าให้ปุ่มอยู่เหนือแผนที่ */
+  p {
+    margin-top: 40px;
+    margin-left: 150px;
+    font-size: 24px;
+  }
+}
+
+.button-region {
+  position: absolute;
+  top: 10px;
+  margin-top: 10px;
+  margin-left: 60px;
+  height: 80px;
+  line-height: 80px;
+  width: 80px;
+  font-size: 3em;
+  font-weight: bold;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: rgb(0, 0, 0);
+  text-align: center;
+  cursor: pointer;
+  z-index: 1000; /* ตั้งค่าให้ปุ่มอยู่เหนือแผนที่ */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* เพิ่มเงาให้ดูเด่นขึ้น */
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease; /* เพิ่มการเปลี่ยนสีที่นุ่มนวล */
+}
+
+.button-region:hover {
+  background-color: rgb(0, 0, 0); /* เปลี่ยนสีพื้นหลังเมื่อ hover */
+  color: #ffffff; /* เปลี่ยนสีตัวอักษร */
+}
+
+.section-detail-pin {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 250px;
+  float: inline-end;
+  background-color: #1d8348;
+
+  text-align: center;
+
+  color: white;
+
+  img {
+    margin-top: 5%;
+    margin-left: 25%;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+  }
+
+  h1 {
+    text-align: center;
+  }
+}
