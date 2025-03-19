@@ -1,5 +1,5 @@
 // Lib
-import { useEffect, useState, useCallback } from 'react'
+import { useEffect, useState, useCallback, useRef } from 'react'
 import MarkerClusterGroup from 'react-leaflet-cluster'
 import L, { DivIcon, Icon, LatLngExpression, Layer, PathOptions } from 'leaflet'
 import { Marker, TileLayer, LayersControl, Tooltip, useMap, Popup, GeoJSON } from 'react-leaflet'
@@ -343,16 +343,23 @@ export const MyArea = (): JSX.Element | null => {
 
 export const MyTimeDimension = (): JSX.Element | null => {
   const map = useMap()
+  const [click, setClick] = useState<Boolean>(false)
+  const timeDimensionControlRef = useRef<any>(null)
+  const tdLayerRef = useRef<any>(null) // เพิ่มตรงนี้
 
   useEffect(() => {
-    // เพิ่ม TimeDimension Control (เฉพาะรอบแรกเท่านั้น)
+    // Easy Button Toggle
+    L.easyButton('fa fa-clock-o', () => {
+      setClick((current) => !current)
+    }).addTo(map)
+
+    // TimeDimension
     if (!(map as any).timeDimension) {
       ;(map as any).timeDimension = new L.TimeDimension({
-        // timeInterval: '2025-03-13T12:00:00Z/2025-03-17T21:00:00Z',
         period: 'PT3H',
-      }) as unknown as any
+      })
 
-      const timeDimensionControl = new L.Control.TimeDimension({
+      timeDimensionControlRef.current = new L.Control.TimeDimension({
         position: 'bottomright',
         backwardButton: false,
         forwardButton: false,
@@ -362,22 +369,20 @@ export const MyTimeDimension = (): JSX.Element | null => {
         minSpeed: 1,
         maxSpeed: 10,
       })
-
-      map.addControl(timeDimensionControl)
     }
 
+    // สร้าง WMS Layer
     const wmsUrl = 'https://ogcie.iblsoft.com/metocean/wms'
-
     const wmsLayer = L.tileLayer.wms(wmsUrl, {
       layers: 'gfs-temperature-isbl',
-      format: 'image/jpeg', // ใช้ JPEG แทน PNG
+      format: 'image/jpeg',
       transparent: true,
       opacity: 0.4,
       crs: L.CRS.EPSG4326,
       attribution: 'OGC MetOcean DWG Best Practice Example, IBL Software Engineering',
     } as any)
 
-    const tdLayer = (L as any).timeDimension.layer.wms(wmsLayer, {
+    tdLayerRef.current = (L as any).timeDimension.layer.wms(wmsLayer, {
       cache: 50,
       cacheBackward: 50,
       cacheForward: 50,
@@ -385,12 +390,37 @@ export const MyTimeDimension = (): JSX.Element | null => {
       requestTimeFromCapabilities: true,
     })
 
-    tdLayer.addTo(map)
+    // ใส่ครั้งแรกถ้าเปิดไว้
+    if (click) {
+      tdLayerRef.current.addTo(map)
+      map.addControl(timeDimensionControlRef.current)
+    }
 
+    // Cleanup
     return () => {
-      map.removeLayer(tdLayer)
+      if (tdLayerRef.current) {
+        map.removeLayer(tdLayerRef.current)
+      }
+      if (timeDimensionControlRef.current) {
+        map.removeControl(timeDimensionControlRef.current)
+      }
     }
   }, [map])
+
+  // 🔄 Toggle Control + Layer ตาม click
+  useEffect(() => {
+    const ctrl = timeDimensionControlRef.current
+    const layer = tdLayerRef.current
+    if (!ctrl || !layer) return
+
+    if (click) {
+      layer.addTo(map)
+      map.addControl(ctrl)
+    } else {
+      map.removeLayer(layer)
+      map.removeControl(ctrl)
+    }
+  }, [click, map])
 
   return null
 }
