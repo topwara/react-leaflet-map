@@ -5,7 +5,23 @@ import { create } from 'xmlbuilder2'
 const app = express()
 const PORT = 3001 // หรือพอร์ตที่ต้องการ
 
-app.use(cors()) // Enable CORS
+// กำหนดค่า CORS เพื่ออนุญาตให้เข้าถึงจาก origin ที่เชื่อถือได้เท่านั้น
+const allowedOrigins = ['http://localhost:3000']
+
+const corsOptions = {
+  origin: (origin: string | undefined, callback: (error: any, allow?: boolean) => void) => {
+    if (allowedOrigins.indexOf(origin as string) !== -1 || !origin) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'), false)
+    }
+  },
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], // กำหนดวิธีการที่อนุญาต
+  allowedHeaders: ['Content-Type', 'Authorization'], // กำหนด header ที่อนุญาต
+}
+
+// ใช้ CORS middleware
+app.use(cors(corsOptions))
 
 app.get('/rss', (req, res) => {
   interface NewsItem {

@@ -348,7 +348,7 @@ export const MyTimeDimension = (): JSX.Element | null => {
     // เพิ่ม TimeDimension Control (เฉพาะรอบแรกเท่านั้น)
     if (!(map as any).timeDimension) {
       ;(map as any).timeDimension = new L.TimeDimension({
-        timeInterval: '2025-03-13T12:00:00Z/2025-03-17T21:00:00Z',
+        // timeInterval: '2025-03-13T12:00:00Z/2025-03-17T21:00:00Z',
         period: 'PT3H',
       }) as unknown as any
 
@@ -416,7 +416,7 @@ export const DesignRegion = (): JSX.Element | any => {
   }, [clickRegion, map, selectedRegionPinList])
 
   const regionPinList = (pinlist: TProvincePin[]) => {
-    const urlImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPzAOB6d0BxKBBN7Kr5fCEwML4vGslJXX2w&s'
+    const urlImg = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT46zCkrgkLKApMjilt0F5OLMcA49s5LleSrw&s'
     const icon = new DivIcon({ html: `<div class="circle"><img src="${urlImg}" alt="nameThai"></div>` })
 
     return (
@@ -542,15 +542,11 @@ export const DesignRegion = (): JSX.Element | any => {
     const detailSelectedPin = clickMarker ? (
       <div className="section-detail-pin">
         <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTuPzAOB6d0BxKBBN7Kr5fCEwML4vGslJXX2w&s"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT46zCkrgkLKApMjilt0F5OLMcA49s5LleSrw&s"
           alt=""
         />
-        <h1>อุทยานแห่งชาติ {clickMarker.title}</h1>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo omnis accusantium alias ea vero quis at
-          tenetur doloribus quidem. Natus unde iure ea voluptatem doloremque maiores blanditiis architecto quas.
-          Nesciunt?
-        </p>
+        <h1>{clickMarker.title}</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
       </div>
     ) : undefined
 

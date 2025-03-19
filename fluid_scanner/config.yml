@@ -1,0 +1,16 @@
+namespace: MyApp
+working_dir: /workdir
+output:
+  file_path: /workdir/Fluid-Attacks-Results.csv
+  format: CSV
+language: EN
+sast:
+  include:
+    - .
+  exclude:
+    - glob(**/node_modules/**)
+sca:
+  include:
+    - .
+  exclude:
+    - glob(**/node_modules/**)

@@ -1,0 +1,194 @@
+title,cwe,description,cvss,cvss_v4,finding,stream,kind,where,snippet,method
+011. Use of software with known vulnerabilities,CWE-1333,"Use of nth-check at version 1.0.2 with ['CVE-2021-3803', 'GHSA-rp65-9cf3-cjxr'] in MyApp/package-lock.json",CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,18010,"
+  18000 |       }
+  18001 |     },
+  18002 |     ""node_modules/svgo/node_modules/has-flag"": {
+  18003 |       ""version"": ""3.0.0"",
+  18004 |       ""resolved"": ""https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz"",
+  18005 |       ""integrity"": ""sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw=="",
+  18006 |       ""engines"": {
+  18007 |         ""node"": "">=4""
+  18008 |       }
+  18009 |     },
+> 18010 |     ""node_modules/svgo/node_modules/nth-check"": {
+  18011 |       ""version"": ""1.0.2"",
+  18012 |       ""resolved"": ""https://registry.npmjs.org/nth-check/-/nth-check-1.0.2.tgz"",
+  18013 |       ""integrity"": ""sha512-WeBOdju8SnzPN5vTUJYxYUxLeXpCaVP5i5e0LF8fg7WORF2Wd7wFX/pk0tYZk7s8T+J7VLy0Da6J1+wCT0AtHg=="",
+  18014 |       ""dependencies"": {
+  18015 |         ""boolbase"": ""~1.0.0""
+  18016 |       }
+  18017 |     },
+  18018 |     ""node_modules/svgo/node_modules/supports-color"": {
+  18019 |       ""version"": ""5.5.0"",
+  18020 |       ""resolved"": ""https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz"",
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-1333,"Use of path-to-regexp at version 6.1.0 with ['CVE-2024-45296', 'GHSA-9wv6-86v2-598j'] in MyApp/package-lock.json",CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,5651,"
+   5641 |       },
+   5642 |       ""peerDependencies"": {
+   5643 |         ""encoding"": ""^0.1.0""
+   5644 |       },
+   5645 |       ""peerDependenciesMeta"": {
+   5646 |         ""encoding"": {
+   5647 |           ""optional"": true
+   5648 |         }
+   5649 |       }
+   5650 |     },
+>  5651 |     ""node_modules/@vercel/node/node_modules/path-to-regexp"": {
+   5652 |       ""version"": ""6.1.0"",
+   5653 |       ""resolved"": ""https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.1.0.tgz"",
+   5654 |       ""integrity"": ""sha512-h9DqehX3zZZDCEm+xbfU0ZmwCGFCAAraPJWMXJ4+v32NjZJilVg3k1TcKsRgIb8IQ/izZSaydDc1OhJCZvs2Dw==""
+   5655 |     },
+   5656 |     ""node_modules/@vercel/node/node_modules/tr46"": {
+   5657 |       ""version"": ""0.0.3"",
+   5658 |       ""resolved"": ""https://registry.npmjs.org/tr46/-/tr46-0.0.3.tgz"",
+   5659 |       ""integrity"": ""sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==""
+   5660 |     },
+   5661 |     ""node_modules/@vercel/node/node_modules/webidl-conversions"": {
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-1333,"Use of path-to-regexp at version 6.1.0 with ['CVE-2024-45296', 'GHSA-9wv6-86v2-598j'] in MyApp/package-lock.json",CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,5712,"
+   5702 |       ""integrity"": ""sha512-i+uPSIOBygkXLc6unOkfrJ0jNdqzRRZ8Esu+8kt/OPm4VCOHro3hyiMxFDtdvPWDQfulVOeDNkXnqlgLRDVdlw=="",
+   5703 |       ""dependencies"": {
+   5704 |         ""@vercel/error-utils"": ""2.0.3"",
+   5705 |         ""@vercel/nft"": ""0.27.10"",
+   5706 |         ""@vercel/static-config"": ""3.0.0"",
+   5707 |         ""path-to-regexp"": ""6.1.0"",
+   5708 |         ""path-to-regexp-updated"": ""npm:path-to-regexp@6.3.0"",
+   5709 |         ""ts-morph"": ""12.0.0""
+   5710 |       }
+   5711 |     },
+>  5712 |     ""node_modules/@vercel/remix-builder/node_modules/path-to-regexp"": {
+   5713 |       ""version"": ""6.1.0"",
+   5714 |       ""resolved"": ""https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-6.1.0.tgz"",
+   5715 |       ""integrity"": ""sha512-h9DqehX3zZZDCEm+xbfU0ZmwCGFCAAraPJWMXJ4+v32NjZJilVg3k1TcKsRgIb8IQ/izZSaydDc1OhJCZvs2Dw==""
+   5716 |     },
+   5717 |     ""node_modules/@vercel/ruby"": {
+   5718 |       ""version"": ""2.2.0"",
+   5719 |       ""resolved"": ""https://registry.npmjs.org/@vercel/ruby/-/ruby-2.2.0.tgz"",
+   5720 |       ""integrity"": ""sha512-FJF9gKVNHAljGOgV6zS5ou2N7ZgjOqMMtcPA5lsJEUI5/AZzVDWCmtcowTP80wEtHuupkd7d7M399FA082kXYQ==""
+   5721 |     },
+   5722 |     ""node_modules/@vercel/static-build"": {
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-144 + CWE-74,"Use of postcss at version 7.0.39 with ['CVE-2023-44270', 'GHSA-7fh5-64p2-3v2j'] in MyApp/package-lock.json",CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:L/A:N/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:L/VA:N/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,16478,"
+  16468 |     ""node_modules/resolve-url-loader/node_modules/convert-source-map"": {
+  16469 |       ""version"": ""1.9.0"",
+  16470 |       ""resolved"": ""https://registry.npmjs.org/convert-source-map/-/convert-source-map-1.9.0.tgz"",
+  16471 |       ""integrity"": ""sha512-ASFBup0Mz1uyiIjANan1jzLQami9z1PoYSZCiiYW2FczPbenXc45FZdBZLzOT+r6+iciuEModtmCti+hjaAk0A==""
+  16472 |     },
+  16473 |     ""node_modules/resolve-url-loader/node_modules/picocolors"": {
+  16474 |       ""version"": ""0.2.1"",
+  16475 |       ""resolved"": ""https://registry.npmjs.org/picocolors/-/picocolors-0.2.1.tgz"",
+  16476 |       ""integrity"": ""sha512-cMlDqaLEqfSaW8Z7N5Jw+lyIW869EzT73/F5lhtY9cLGoVxSXznfgfXMO0Z5K0o0Q2TkTXq+0KFsdnSe3jDViA==""
+  16477 |     },
+> 16478 |     ""node_modules/resolve-url-loader/node_modules/postcss"": {
+  16479 |       ""version"": ""7.0.39"",
+  16480 |       ""resolved"": ""https://registry.npmjs.org/postcss/-/postcss-7.0.39.tgz"",
+  16481 |       ""integrity"": ""sha512-yioayjNbHn6z1/Bywyb2Y4s3yvDAeXGOyxqD+LnVOinq6Mdmd++SW2wUNVzavyyHxd6+DxzWGIuosg6P1Rj8uA=="",
+  16482 |       ""dependencies"": {
+  16483 |         ""picocolors"": ""^0.2.1"",
+  16484 |         ""source-map"": ""^0.6.1""
+  16485 |       },
+  16486 |       ""engines"": {
+  16487 |         ""node"": "">=6.0.0""
+  16488 |       },
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-184 + CWE-693,Use of http-proxy at version 1.11.1 with ['GHSA-6x33-pw7p-hmpq'] in MyApp/package-lock.json,CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:L/AT:N/PR:N/UI:N/VC:N/VI:N/VA:H/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,10927,"
+  10917 |       },
+  10918 |       ""engines"": {
+  10919 |         ""node"": "">= 0.8""
+  10920 |       }
+  10921 |     },
+  10922 |     ""node_modules/http-parser-js"": {
+  10923 |       ""version"": ""0.5.9"",
+  10924 |       ""resolved"": ""https://registry.npmjs.org/http-parser-js/-/http-parser-js-0.5.9.tgz"",
+  10925 |       ""integrity"": ""sha512-n1XsPy3rXVxlqxVioEWdC+0+M+SQw0DpJynwtOPo1X+ZlvdzTLtDBIJJlDQTnwZIFJrZSzSGmIOUdP8tu+SgLw==""
+  10926 |     },
+> 10927 |     ""node_modules/http-proxy"": {
+  10928 |       ""version"": ""1.11.1"",
+  10929 |       ""resolved"": ""https://registry.npmjs.org/http-proxy/-/http-proxy-1.11.1.tgz"",
+  10930 |       ""integrity"": ""sha512-qz7jZarkVG3G6GMq+4VRJPSN4NkIjL4VMTNhKGd8jc25BumeJjWWvnY3A7OkCGa8W1TTxbaK3dcE0ijFalITVA=="",
+  10931 |       ""dependencies"": {
+  10932 |         ""eventemitter3"": ""1.x.x"",
+  10933 |         ""requires-port"": ""0.x.x""
+  10934 |       },
+  10935 |       ""engines"": {
+  10936 |         ""node"": "">=0.10.0""
+  10937 |       }
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-330,"Use of undici at version 5.28.4 with ['CVE-2025-22150', 'GHSA-c76h-2ccp-4975'] in MyApp/package-lock.json",CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:H/A:N/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:H/VI:H/VA:N/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,18676,"
+  18666 |       },
+  18667 |       ""funding"": {
+  18668 |         ""url"": ""https://github.com/sponsors/ljharb""
+  18669 |       }
+  18670 |     },
+  18671 |     ""node_modules/underscore"": {
+  18672 |       ""version"": ""1.12.1"",
+  18673 |       ""resolved"": ""https://registry.npmjs.org/underscore/-/underscore-1.12.1.tgz"",
+  18674 |       ""integrity"": ""sha512-hEQt0+ZLDVUMhebKxL4x1BTtDY7bavVofhZ9KZ4aI26X9SRaE+Y3m83XUL1UP2jn8ynjndwCCpEHdUG+9pP1Tw==""
+  18675 |     },
+> 18676 |     ""node_modules/undici"": {
+  18677 |       ""version"": ""5.28.4"",
+  18678 |       ""resolved"": ""https://registry.npmjs.org/undici/-/undici-5.28.4.tgz"",
+  18679 |       ""integrity"": ""sha512-72RFADWFqKmUb2hmmvNODKL3p9hcB6Gt2DOQMis1SEBaV6a4MH8soBvzg+95CYhCKPFedut2JY9bMfrDl9D23g=="",
+  18680 |       ""dependencies"": {
+  18681 |         ""@fastify/busboy"": ""^2.0.0""
+  18682 |       },
+  18683 |       ""engines"": {
+  18684 |         ""node"": "">=14.0""
+  18685 |       }
+  18686 |     },
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-346,Use of esbuild at version 0.14.47 with ['GHSA-67mh-4wv8-2f99'] in MyApp/package-lock.json,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,5447,"
+   5437 |       ""resolved"": ""https://registry.npmjs.org/@vercel/gatsby-plugin-vercel-builder/-/gatsby-plugin-vercel-builder-2.0.80.
+   5438 |       ""integrity"": ""sha512-MC1Gx6eRfmqaARL1DczldYzA3NdMlnC5vY/AXBSZuiHCoENS4++duEjhDjMtRSiidwSCrjuaz5Y9yxKTocRmzA=="",
+   5439 |       ""dependencies"": {
+   5440 |         ""@sinclair/typebox"": ""0.25.24"",
+   5441 |         ""@vercel/build-utils"": ""10.5.1"",
+   5442 |         ""esbuild"": ""0.14.47"",
+   5443 |         ""etag"": ""1.8.1"",
+   5444 |         ""fs-extra"": ""11.1.0""
+   5445 |       }
+   5446 |     },
+>  5447 |     ""node_modules/@vercel/gatsby-plugin-vercel-builder/node_modules/esbuild"": {
+   5448 |       ""version"": ""0.14.47"",
+   5449 |       ""resolved"": ""https://registry.npmjs.org/esbuild/-/esbuild-0.14.47.tgz"",
+   5450 |       ""integrity"": ""sha512-wI4ZiIfFxpkuxB8ju4MHrGwGLyp1+awEHAHVpx6w7a+1pmYIq8T9FGEVVwFo0iFierDoMj++Xq69GXWYn2EiwA=="",
+   5451 |       ""hasInstallScript"": true,
+   5452 |       ""bin"": {
+   5453 |         ""esbuild"": ""bin/esbuild""
+   5454 |       },
+   5455 |       ""engines"": {
+   5456 |         ""node"": "">=12""
+   5457 |       },
+        ^ Col 0
+",npm.npm_package_lock_json
+011. Use of software with known vulnerabilities,CWE-346,Use of esbuild at version 0.14.47 with ['GHSA-67mh-4wv8-2f99'] in MyApp/package-lock.json,CVSS:3.1/AV:N/AC:H/PR:N/UI:R/S:U/C:H/I:N/A:N/E:U/RL:O/RC:C,CVSS:4.0/AV:N/AC:H/AT:N/PR:N/UI:A/VC:H/VI:N/VA:N/SC:N/SI:N/SA:N/E:U,https://help.fluidattacks.com/portal/en/kb/articles/criteria-vulnerabilities-011,skims,SCA,5598,"
+   5588 |       ""integrity"": ""sha512-V+SsTpDqkrWTimiotsyl33ePSjA5/KrithwupuvJ6ztsqPvGv6ge4OredFhPffVXiLN/QUWvE0XcqJaYgt6fOg=="",
+   5589 |       ""engines"": {
+   5590 |         ""node"": "">= 14""
+   5591 |       }
+   5592 |     },
+   5593 |     ""node_modules/@vercel/node/node_modules/cjs-module-lexer"": {
+   5594 |       ""version"": ""1.2.3"",
+   5595 |       ""resolved"": ""https://registry.npmjs.org/cjs-module-lexer/-/cjs-module-lexer-1.2.3.tgz"",
+   5596 |       ""integrity"": ""sha512-0TNiGstbQmCFwt4akjjBg5pLRTSyj/PkWQ1ZoO2zntmg9yLqSRxwEa4iCfQLGjqhiqBfOJa7W/E8wfGrTDmlZQ==""
+   5597 |     },
+>  5598 |     ""node_modules/@vercel/node/node_modules/esbuild"": {
+   5599 |       ""version"": ""0.14.47"",
+   5600 |       ""resolved"": ""https://registry.npmjs.org/esbuild/-/esbuild-0.14.47.tgz"",
+   5601 |       ""integrity"": ""sha512-wI4ZiIfFxpkuxB8ju4MHrGwGLyp1+awEHAHVpx6w7a+1pmYIq8T9FGEVVwFo0iFierDoMj++Xq69GXWYn2EiwA=="",
+   5602 |       ""hasInstallScript"": true,
+   5603 |       ""bin"": {
+   5604 |         ""esbuild"": ""bin/esbuild""
+   5605 |       },
+   5606 |       ""engines"": {
+   5607 |         ""node"": "">=12""
+   5608 |       },
+        ^ Col 0
+",npm.npm_package_lock_json
+Summary: 8 vulnerabilities were found in your targets.

@@ -39,7 +39,7 @@
     "sass": "^1.77.8",
     "tsx": "^4.19.3",
     "typescript": "^4.9.5",
-    "vercel": "^35.0.2",
+    "vercel": "^41.4.1",
     "web-vitals": "^2.1.4",
     "xmlbuilder2": "^3.1.1"
   },
